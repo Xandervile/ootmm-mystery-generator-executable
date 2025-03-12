@@ -142,6 +142,8 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
                             "extra":1}
 
     SettingsList["mode"] = data["Mode"][0]
+    if SettingsList["mode"] == "multi" or SettingsList["mode"] == "coop":
+        SettingsList["teams"] = data["Teams"][0]
     if SettingsList["mode"] == "multi":
         SettingsList["players"] = data["Players"][0]
         SettingsList["distinctWorlds"] = data["DistinctWorlds"][0]
@@ -151,7 +153,7 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
     if WinCond == "Triforce Hunt":
         SettingsList["goal"] = "triforce"
         SettingsList["triforceGoal"] = random.choices(data["TriforcePieces"][0], data["TriforcePieces"][1])[0]
-        SettingsList["triforcePieces"] = int(1.5 * SettingsList["triforceGoal"])
+        SettingsList["triforcePieces"] = min(int(1.5 * SettingsList["triforceGoal"]), 50)
     elif WinCond == "Triforce Quest":
         SettingsList["goal"] = "triforce3"
     

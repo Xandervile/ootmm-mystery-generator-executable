@@ -71,14 +71,6 @@ class AppDrawer extends StatelessWidget {
               Navigator.pushNamed(context, '/world_settings');
             },
           ),
-          ListTile(
-            leading: Icon(Icons.face),
-            title: Text('Misc. Settings'),
-            onTap: () {
-              Navigator.pop(context);
-              Navigator.pushNamed(context, '/misc_settings');
-            },
-          ),
         ],
       ),
     );

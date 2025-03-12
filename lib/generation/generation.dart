@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:ootmmgenerator/settings/general_settings.dart';
+
+//'mainBlitz': "v1.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",
+
 
 class ItemWeightSettings {
   static const Map<String, String> itemWeightKeys = {
@@ -47,6 +49,9 @@ class ItemWeightSettings {
     'bossSoulsFullWeight': 'bossSoulsFullWeight',
     'bossSoulsBKNoneWeight': 'bossSoulsBKNoneWeight',
     'bossSoulsBKFullWeight': 'bossSoulsBKNoneWeight',
+
+    'swordStartWeight': 'swordStartWeight',
+    'swordShufWeight': 'swordShufWeight',
     
     'clocksNoneWeight': 'clocksNoneWeight',
     'clocksFullWeight': 'clocksFullWeight',
@@ -162,6 +167,11 @@ class WorldWeightSettings {
     'ootBeanVanWeight': 'ootBeanVanWeight',
     'ootBeanFullWeight':'ootBeanFullWeight',
 
+    'priceAffordableWeight': 'priceAffordableWeight',
+    'priceVanillaWeight': 'priceVanillaWeight',
+    'priceWeightedWeight': 'priceWeightedWeight',
+    'priceRandomWeight': 'priceRandomWeight',
+
     'zeldaMeetWeight': 'zeldaMeetWeight',
     'zeldaSkipWeight': 'zeldaSkipWeight',
 
@@ -251,28 +261,102 @@ Future<Map<String, int>> getWorldWeights() async {
   return worldWeights;
 }
 
+class MainWeightSettings {
+  static const Map<String, String> mainWeightKeys = {
+    "playerCount": "playerCount",
+    "teamCount": "teamCount",
+    "multiMode": "multiMode",
+    "minSettingsAmount": "minSettingsAmount",
+    "maxSettingsAmount": "maxSettingsAmount",
+    "hardModeLimit": "hardModeLimit",
+    "distinctWorlds": "distinctWorlds",
+    "sharedItems": "sharedItems",
+    "presetTemplate": "presetTemplate",
+
+    "itemPoolPlentiful": "itemPoolPlentiful",
+    "itemPoolNormal": "itemPoolNormal",
+    "itemPoolScarce": "itemPoolScarce",
+    "itemPoolMinimal": "itemPoolMinimal",
+    "itemPoolBarren": "itemPoolBarren",
+
+    "winGMWeight": "winGMWeight",
+    "winPiecesWeight": "winPiecesWeight",
+    "winQuestWeight": "winQuestWeight",
+
+    "pieces20Weight": "pieces20Weight",
+    "pieces25Weight": "pieces25Weight",
+    "pieces30Weight": "pieces30Weight",
+    "pieces35Weight": "pieces35Weight",
+    "pieces40Weight": "pieces40Weight",
+  };
+}
+
+// This function retrieves the item weights from persistent_settings.json
+Future<Map<String, String>> getMainWeights() async {
+  final dir = Directory.current;
+  final settingsFile = File('${dir.path}/persistent_settings.json');
+
+  Map<String, String> mainWeights = {};
+
+  // Check if the settings file exists
+  if (await settingsFile.exists()) {
+    try {
+      // Read the file and parse its contents
+      String content = await settingsFile.readAsString();
+      Map<String, dynamic> jsonData = jsonDecode(content);
+
+      // Retrieve the item weights from the JSON data
+      for (var key in MainWeightSettings.mainWeightKeys.keys) {
+        // Store the value as a String (for easier handling)
+        mainWeights[key] = jsonData[key]?.toString() ?? ''; // Default to empty string if the key doesn't exist
+      }
+    } catch (e) {
+      print("Error loading settings from file: $e");
+      // Fallback to default weights in case of an error
+      for (var key in MainWeightSettings.mainWeightKeys.keys) {
+        mainWeights[key] = ''; // Default value as an empty string
+      }
+    }
+  } else {
+    // If the settings file doesn't exist, use default weights
+    for (var key in MainWeightSettings.mainWeightKeys.keys) {
+      mainWeights[key] = ''; // Default value as an empty string
+    }
+  }
+
+  return mainWeights;
+}
+
+class SettingsMapping {
+  static const Map<String, String> presetMap = {
+    "blitz": "v1.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",
+    "standard": "v1.eJztWEGzozYS/iuUD7uXd3iTzdbuvhvG2JBnjAt448qkpigZZEMsJEoSz3FNzX9Pt8AYsJPK7CGnucHXrVb3191Sw5dZUXK9JbqYC6VmL1o29KnHXJ4/hN8p1yPUr2ohNeEZvaK65EdG46I5HBiAM6WJRGz2NKtI7YiqJko9FKuKMPZKL50wqEAsaSXeaX4v9cqcikaDyjvhJWMEVbQklyUp5cUpqNKPN2nBFZVNLhwi89nLgTBFe0lA1CmRJKd9nJUQ3JFEFWApu2Rg8am3aB/RviQ8FxXCZyFzRpWy84bpq4FcCBkekrJCXVFTDprkSJ2CcLOcsDO5KABzemoSSRHLmFAmbtiPyFgTTRcNqAuuDDF7oQuQnsiJyPIkViC/GT+a6JaQGUkxizNlkoIOnsr6E2U5ufomScn34jyXZW58yRqlTSh7yP+OyHpLctUmAjTRyQM4GGdE0kyKcyj6KEc4+tjC6BJyGhei7hmttpLamS7fwe08PDPY4ctMX2qTrJpm5aHMYKt3whrMwy9IR3bS4sxnn78CJxKcM9S39sw7Ojtwp8cMXYeGMSRTVVl8gmfdsJ4CBB1xvr6eKK19TSsVUUV7c6oguTgvidJzQXq0luKIFJfvdCWk4GswTfaXIeOQKM2oI7iG3ulLsjOqBaf2UfDLjS+ly+ykNo1Wb/XR1OFNtgc6liVQJ4Hivj5Vw1l5LPQELSD9nhAneNADE6LaZ0UzpwV5L6EskbDZnhxjWhOJRXSn0pbbSANSxBg6MnAboV3J8wm0hvYd7i608oGoCeSBlrxhuuFlZgidYJ+EJIMNMsKG9ED/U37UxQ050WPcgf/qjy1SVcPNVF3yjupB+WArxkUJrTKkH9KPtTzQMymcYJTR42XwzigvMfl1ecJqvp43gh/Dw0I0e0bxbBgaLaCN8rivjgl+c3gswKKJTfmM8fmoLFqk2s/JcYIG5Ahtdw+ZwsJ0/5HMz/5QtMbKnPgPgUNssppsfy3WMbqm/M5NdTLFcQ9jfdyj84ZPOUT4lRL9yEgiGzhb761g9u9hk6X7AF2sgTG8gwuM6mnQlLDpbm3dPUgZdOW0FLpGfABjMz6AsSGnlrumfACbxhzjSd+cD/D7BMSmSaeV3fbkhArTmFcMLki8SJ2iZHkyrPVf6zW5wNU/vDM45mBwX+Alcb2izVmOukGQho4d+Rt79vLhCV/jcLNK3W04QeIQtVYjLPEDtwd2YbQwL2GYjGzGnh25i3TzlsTph+fZyw89FHu+u16k3s9r394MdePEd14BeAaXf234aS0yokvBzbUXBNaccqjTwkoKaq0keacXGFqsBalqapkxZ4Y+WQs4r6wtI5ejFA3PrYieUc9mDHTNcAFKJmtWRDLayTtYwg7WnFy6JzNCtSIPiL1Y/wAbkgGXj836J8LJ/Vqfl7okzMJ2sMTBwlJvhzAQrskeSgVOgYuFNWOUWkkA45a1LKkELxe01BcL2+wqa7iGOcT6iCPfkVpLuICBBlFKy9u2OmFGCbfgkMwpgKJR1Go7rxVvS84JDFVWBBNFvyjm4lxQkt9HAf0NeluhIR5uOaKpGf2nGvgUnyEX4/1QiBG3J4nRSmB2sWyZFRQi7lj8oRXt4FKVcCkwyAxYUZBySLNs83TVESI3KmP/oP6sfp7pNv/xGTY7UTOrPZL/u5d/hltVttcFllrqfrQ36dKOwsg1u6aev1i4m3QVhUkSxi22djfd0yZMY9f2wiju1MONmwZ2/Ao1jY9JuHOjVrK117bjpnMXNohf/ZZ0aKy3xHMjgHZ2sE1jJ3qbp942XYVRuGlVkreN73T7fQojO/Xs9fqmCS4s3Ne3NtJ04aQ/vQXb65trQ7/Zm67F4g5eQnRxknph+Nohnh0EbpTuwPJV6S5wBLvI8TGAOMJNGoXhskM2/spL0tVVofcbXz6Ga8cGV73woxtdwZ2/WQQ+BGPCSDw8cD4/tdMvYTAv5ubQmkf+YuXiU4a1P3v5Xzdz3D5PaA6F0Z4Y3Uzfzer9pIEVoFaC5RPIlO4EM+3TYwcotJKq3XKKxN4UWc3vdJIRcsEe6JEKegRG7CMUphyDcNpzdYD5YAyb+agDoGxBAaeODsgEBBzRfAxAs1A+huZwQ4yRn+FSxOnfYHAIByEU343v//wZ352dnvDuOvvO9zfwDSdDPOD7+cb31Zs/Ifx7hf8fjK/gMNqk89fvrP+t54r9E1xg3zn/+zgH0muGv+aQdHabq7+Yucj8BoNJbk21xs+O0TD/NFIxw2mr0H4MbNM13vdXNRxgoxJntrmZPcGL3mJgr3zHTD4z8IdyLfFvKXqB/uE/VBy/+i+ZgxCsVDg0kqotk//Cqt80flZ9+PrU6/X/DK9qQOxvs4eqSlRUlxUdav/4ULOET6WB0oeb0lMre5l8zgR+BNPi7NtMwChnpkTH3ia2v/n21dtwt4CB7dVdfePaznkbnN6lvuMOl5/bH6r98ue/zOWU+c9ffwfSlAZd",
+  };
+}
+
+
 // This function generates the JSON data using the weights
-Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, int> worldWeights) async {
+Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, int> worldWeights, Map<String, String> mainWeights) async {
   // Create the gameplay settings JSON
   Map<String, dynamic> jsonData = {
-    "SettingsString": "v1.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",
+    "SettingsString": SettingsMapping.presetMap[mainWeights["presetTemplate"]],
 
-    "Goal": [["Ganon and Majora", "Triforce Hunt", "Triforce Quest"], [75, 10, 15]],
-    "TriforcePieces": [[20, 25, 30], [50, 30, 20]],
+    "Goal": [["Ganon and Majora", "Triforce Hunt", "Triforce Quest"], [int.tryParse(mainWeights["winGMWeight"] ?? "") ?? 70, int.tryParse(mainWeights["winPiecesWeight"] ?? "") ?? 10, int.tryParse(mainWeights["winQuestWeight"] ?? "") ?? 20]],
+    "TriforcePieces": [[20, 25, 30, 35, 40], [int.tryParse(mainWeights["pieces20Weight"] ?? "") ?? 15, int.tryParse(mainWeights["pieces25Weight"] ?? "") ?? 20, int.tryParse(mainWeights["pieces30Weight"] ?? "") ?? 30, int.tryParse(mainWeights["pieces35Weight"] ?? "") ?? 20, int.tryParse(mainWeights["pieces40Weight"] ?? "") ?? 15]],
     "LogicSettings":[["beatable", "none", "allLocations"], [0, 0, 100]],
-    "ItemPool":[["plentiful", "normal", "scarce", "minimal", "barren"], [0, 100, 0, 0, 0]],
+    "ItemPool":[["plentiful", "normal", "scarce", "minimal", "barren"], [int.tryParse(mainWeights["itemPoolPlentiful"] ?? "") ?? 0, int.tryParse(mainWeights["itemPoolNormal"] ?? "") ?? 100, int.tryParse(mainWeights["itemPoolScarce"] ?? "") ?? 0, int.tryParse(mainWeights["itemPoolMinimal"] ?? "") ?? 0, int.tryParse(mainWeights["itemPoolBarren"] ?? "") ?? 0]],
     
-    "Mode": ["single"],
-    "Players": [2],
-    "Teams": [2],
-    "DistinctWorlds": [true],
+    "Mode": [mainWeights['multiMode']],
+    "Players": [int.tryParse(mainWeights["playerCount"] ?? "") ?? 2],
+    "Teams": [int.tryParse(mainWeights["teamCount"] ?? "") ?? 1],
+    "DistinctWorlds": [mainWeights["distinctWorlds"]],
     
-    "SharedItems": [true],
+    "SharedItems": [mainWeights["sharedItems"]],
 
     "GameplaySettings": {
-      "MinimumSettingsAmount":5,
-      "MaximumSettingsAmount":99,
-      "HardModeLimit":2,
+      "MinimumSettingsAmount": int.tryParse(mainWeights["minSettingsAmount"] ?? "") ?? 4,
+      "MaximumSettingsAmount": int.tryParse(mainWeights["maxSettingsAmount"] ?? "") ?? 99,
+      "HardModeLimit": int.tryParse(mainWeights["hardModeLimit"] ?? "") ?? 2,
       "TFGrassAllowed":[false],
       "AdultInMM":[[true, false], [100, 0]],
       "MMWorldLayout":[["us", "jp"], [100, 0]],
@@ -282,7 +366,7 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "PotShuffle":[["none", "dungeons", "overworld", "all"], [itemWeights['potNoneWeight'], itemWeights['potDungWeight'], itemWeights['potOwWeight'], itemWeights['potFullWeight']]],
       "FreestandingShuffle":[["none", "dungeons", "overworld", "all"], [itemWeights['freeNoneWeight'], itemWeights['freeDungWeight'], itemWeights['freeOwWeight'], itemWeights['freeFullWeight']]],
       "WonderSpotShuffle":[["none", "dungeons", "overworld", "all"], [itemWeights['wonderNoneWeight'], itemWeights['wonderDungWeight'], itemWeights['wonderOwWeight'], itemWeights['wonderFullWeight']]],
-      "SwordShuffle":[[true, false], [30, 70]],
+      "SwordShuffle":[[true, false], [itemWeights['swordShufWeight'], itemWeights["swordStartWeight"]]],
       "FairyFountainShuffle":[[true, false], [itemWeights['fairyFountainFullWeight'], itemWeights['fairyFountainNoneWeight']]],
       "ButterflyShuffle":[[true, false], [itemWeights['butterflyFullWeight'], itemWeights['butterflyNoneWeight']]],
       "CowShuffle":[[true, false], [itemWeights['cowFullWeight'], itemWeights['cowNoneWeight']]],
@@ -302,7 +386,7 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       
       "ShopShuffle":[["none", "full"], [itemWeights['shopVanWeight'], itemWeights['shopFullWeight']]],
       "MerchantShuffle":[[true, false], [itemWeights['merchFullWeight'], itemWeights['merchVanWeight']]],
-      "PriceShuffle":[["Affordable", "Vanilla", "Weighted Random", "Fully Random"], [20, 30, 50, 0]],
+      "PriceShuffle":[["Affordable", "Vanilla", "Weighted Random", "Fully Random"], [worldWeights["priceAffordableWeight"], worldWeights["priceVanillaWeight"], worldWeights["priceWeightedWeight"], worldWeights["priceRandomWeight"]]],
       "ChildWallet":[[true, false], [10, 90]],
       "MaxWalletSize":[["Giant", "Colossal", "Bottomless"], [40, 30, 30]],
 
@@ -325,7 +409,7 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "BossSoulsWeight": [[true, false], [itemWeights['bossSoulsFullWeight'], itemWeights['bossSoulsNoneWeight']], [itemWeights['bossSoulsBKFullWeight'], itemWeights['bossSoulsBKNoneWeight']]],
       "StrayFairyShuffle": [["Removed", "Anywhere"], [itemWeights['strayFairyChestsWeight'], itemWeights['strayFairyAllWeight']]],
       "MQDungeonAmount":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1]],
-      "GibdoSettings":[["vanilla", "remorseless", "open"], [0, 90, 10]],
+      "GibdoSettings":[["vanilla", "remorseless", "open"], [0, 90, 10], [0, 30, 70]],
       "OpenDungeons":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [1024, 256, 128, 64, 32, 16, 8, 4, 2, 1]],
       "GanonTrialAmount":[[0, 1, 2, 3, 4, 5, 6], [64, 32, 16, 8, 4, 2, 1]],
       "TCGKeySettings":[["vanilla", "ownDungeon", "anywhere"], [60, 30, 10]],
@@ -371,11 +455,11 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
   await file.writeAsString(jsonString);
 
   // Call the Python script
-  await runPythonScript();
+  await runPythonScript(mainWeights);
 }
 
 // This function runs the Python script
-Future<void> runPythonScript() async {
+Future<void> runPythonScript(Map<String, String> mainWeights) async {
   try {
     // Call the Python script, assuming it's in the same directory
     final result = await Process.run('python', ['generate.py']);
@@ -390,8 +474,9 @@ Future<void> generateSettings() async {
   // Get the item weights from shared preferences
   Map<String, int> itemWeights = await getItemWeights();
   Map<String, int> worldWeights = await getWorldWeights();
+  Map<String, String> mainWeights = await getMainWeights();
 
   // Call the function to generate the JSON and run the Python script
-  await generateJsonAndRunPython(itemWeights, worldWeights);
+  await generateJsonAndRunPython(itemWeights, worldWeights, mainWeights);
   print("JSON generated and Python script executed.");
 }

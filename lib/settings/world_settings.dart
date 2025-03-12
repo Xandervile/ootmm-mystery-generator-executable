@@ -4,7 +4,7 @@ import 'dart:io';
 import 'dart:convert';
 import 'dart:async';
 
-//What comes under world? -- ZD Shortcut, Gibdo, MQ Dungeons, JPN locations, Ganon Trials, Open Dungeons, Deku Tree, Entrance Rando
+//What comes under world? -- Gibdo, MQ Dungeons, JPN locations, Ganon Trials, Open Dungeons
 
 class WorldSettingsPage extends StatelessWidget {
   const WorldSettingsPage({super.key});
@@ -38,6 +38,7 @@ class WorldSettingsPage extends StatelessWidget {
                   KingZoraSettings(),
                   OoTBeanSettings(),
                   ZDAdultSettings(),
+                  PriceSettings(),
                   DoorOfTimeSettings(),
                   TimeTravelSettings(),
                   Container(height: 3, color: Theme.of(context).colorScheme.inversePrimary),
@@ -57,6 +58,17 @@ class WorldSettingsPage extends StatelessWidget {
                   ExtraDungeonEntranceSettings(),
                   BossEntranceSettings(),
                   GrottoEntranceSettings(),
+                  Container(height: 3, color: Theme.of(context).colorScheme.inversePrimary),
+                  Container(
+                    color: Theme.of(context).colorScheme.inversePrimary.withValues(alpha: 0.4),
+                    width: 1890,
+                    height: 35,
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Mixed and Decoupled Settings',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
                 ]
               )
             ),
@@ -268,6 +280,29 @@ class OoTBeanSettingsState extends WorldWeightSettingsState<OoTBeanSettings> {
   }
 }
 
+// Price Settings
+class PriceSettings extends StatefulWidget {
+  const PriceSettings({super.key});
+
+  @override
+  PriceSettingsState createState() => PriceSettingsState();
+}
+
+class PriceSettingsState extends WorldWeightSettingsState<PriceSettings> {
+  PriceSettingsState()
+      : super({
+        "Affordable": WorldWeightOption('priceAffordableWeight', "All shops cost 10 rupees"),
+        "Vanilla": WorldWeightOption('priceVanillaWeight', "All shops vanilla prices"),
+        "Weighted Random": WorldWeightOption('priceWeightedWeight', "All shops random prices, but weighted to make it fairer"),
+        "Fully Random": WorldWeightOption('priceRandomWeight', "All shops fully random prices"),
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI("Shop Prices (if Shop Shuffle)", worldWeightKeys.keys.toList());
+  }
+}
+
 // Child Zelda Settings
 class SkipZeldaSettings extends StatefulWidget {
   const SkipZeldaSettings({super.key});
@@ -399,7 +434,7 @@ class TimeTravelSettingsState extends WorldWeightSettingsState<TimeTravelSetting
 
   @override
   Widget build(BuildContext context) {
-    return buildSettingsUI("Time Travel Settings", worldWeightKeys.keys.toList());
+    return buildSettingsUI("Time Travel (requires Sword Shuffle)", worldWeightKeys.keys.toList());
   }
 }
 

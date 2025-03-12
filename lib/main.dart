@@ -41,10 +41,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes:{
         '/': (context) => MyHomePage(title: 'OoTMM Generator'),
-        '/settings': (context) => SettingsPage(),
+        '/settings': (context) => MainSettingsPage(),
         '/item_settings': (context) => ItemSettingsPage(),
-        '/world_settings': (context) => WorldSettingsPage(),
-        '/misc_settings': (context) => MiscSettingsPage()
+        '/world_settings': (context) => WorldSettingsPage()
       }
     );
   }
@@ -141,23 +140,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.pushNamed(context, '/world_settings');
               },
             ),
-            ListTile(
-              leading: Icon(Icons.face),
-              title: Text('Misc. Settings'),
-              onTap: () {
-                // Update the state of the app
-                Navigator.pop(context); // Close the drawer
-                Navigator.pushNamed(context, '/misc_settings');
-              },
-            ),
           ]
         )
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+          children: [
+            Text('Each page has settings, either a drop down or weights.'),
+            Text('Weights are the chance of the setting coming up out of the combined weights for each setting'),
+            Text("I ain't a programmer so any bugs, sorry!"),
+            Text("Also scrollbars are weirdly broken despite everything I found so..."),
+            Text("Mouse Wheel Scrolls Up and Down, Shift and Mouse Wheel Scrolls Left and Right"),
+            Text("Adjust weights, hit Generate, then an output folder appears with the spoilers for the settings as well as the Seed String"),
+            Text("Go to the ootmm website and input the string then generate your ROM."),
+            Text("Still working on it though, got to add Mixed Entrance Settings stuff, and some other small things so bear with me!"),
           ],
         ),
       ),

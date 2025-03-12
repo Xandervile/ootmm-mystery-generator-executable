@@ -41,6 +41,7 @@ class ItemSettingsPage extends StatelessWidget {
                   WonderSpotSettings(),
                   FreestandingSettings(),
                   ShopSettings(),
+                  SwordSettings(),
                   CratesBarrelsSettings(),
                   GrassSettings(),
                   ButterflySettings(),
@@ -272,8 +273,8 @@ class SongSettingsState extends ItemWeightSettingsState<SongSettings> {
   SongSettingsState()
       : super({
         'Song Locations': ItemWeightOption('songLocationsWeight', 'Songs shuffled amongst each other'),
-        'Mixed With Owls': ItemWeightOption('songOwlsWeight', 'Songs are mixed in Song and Owl Locations, alongside all Owl Statues. If Ocarina Buttons are shuffled, these are also included here'),
-        'Dungeon Rewards': ItemWeightOption('songRewardsWeight', 'Songs placed on Dungeon Rewards (Boss Heart Containers, PF Hookshot Chest, Ikana King, ST Light Arrow Chest, Secret Shrine Final, Well Mirror Shield, Ice Cavern Iron Boots, GTG Ice Arrows, BotW Lens)'),
+        'Mixed With Owls': ItemWeightOption('songOwlsWeight', 'Songs are mixed in Song and Owl Locations, alongside all Owl Statues. If Ocarina Buttons are shuffled, these are also included here NOTE: Foolish Areas MAY STILL have required songs!'),
+        'Dungeon Rewards': ItemWeightOption('songRewardsWeight', 'Songs placed on Dungeon Rewards (Boss Heart Containers, PF Hookshot Chest, Ikana King, ST Light Arrow Chest, Secret Shrine Final, Well Mirror Shield, Ice Cavern Iron Boots, GTG Ice Arrows, BotW Lens). NOTE: Foolish Dungeons MAY STILL have required songs!'),
         'Anywhere': ItemWeightOption('songAnywhereWeight', 'HARD OPTION: Songs placed anywhere in the world')
       });
 
@@ -297,12 +298,12 @@ class SmallKeySettingsState extends ItemWeightSettingsState<SmallKeySettings> {
         'Standard': ItemWeightOption('smallKeysStandardWeight', 'OoT Own Dungeon Small Keys, MM Keysy'),
         'Keysy': ItemWeightOption('smallKeysyWeight', 'All Small Keys are removed from the world'),
         'Own Dungeons': ItemWeightOption('smallKeysOwnDungWeight', 'Small Keys are only available in their own dungeon'),
-        'Anywhere': ItemWeightOption('smallKeysAnywhereWeight', 'Small Keys placed anywhere in the world')
+        'Anywhere': ItemWeightOption('smallKeysAnywhereWeight', 'Small Keys placed anywhere in the world (this also affects OoT Treasure Game Keys, and Gerudo Fortress Keys)')
       });
 
   @override
   Widget build(BuildContext context) {
-    return buildSettingsUI('Small Key Shuffle', itemWeightKeys.keys.toList());
+    return buildSettingsUI('Dungeon Small Key Shuffle', itemWeightKeys.keys.toList());
   }
 }
 
@@ -319,7 +320,7 @@ class BossKeySettingsState extends ItemWeightSettingsState<BossKeySettings> {
       : super({
           'Keysy': ItemWeightOption('bossKeysyWeight', 'All Boss Keys are removed from the pool'),
           'Own Dungeons': ItemWeightOption('bossKeysOwnDungWeight', 'Boss Keys are only available in their own dungeon'),
-          'Anywhere': ItemWeightOption('bossKeysAnywhereWeight', 'Boss Keys are placed anywhere in the world')
+          'Anywhere': ItemWeightOption('bossKeysAnywhereWeight', 'Boss Keys are placed anywhere in the world. If this, Small Keys and Silver Rupees are all Anywhere, a shared Skeleton Key is added to the pool')
         });
 
   @override
@@ -341,7 +342,7 @@ class SilverRupeeSettingsState extends ItemWeightSettingsState<SilverRupeeSettin
       : super({
           'Vanilla': ItemWeightOption('silvVanWeight', 'OoT Silver Rupee Puzzles are untouched'),
           'Own Dungeons': ItemWeightOption('silvOwnDungWeight', 'OoT Silver Rupees are placed in their own dungeon'),
-          'Anywhere': ItemWeightOption('silvAnywhereWeight', 'HARD OPTION: OoT Silver Rupees are placed anywhere in the world')
+          'Anywhere': ItemWeightOption('silvAnywhereWeight', 'HARD OPTION: OoT Silver Rupees are placed anywhere in the world. If these, Small Keys and Boss Keys roll Anywhere, a Magical Rupee is added to the pool')
         });
 
   @override
@@ -861,5 +862,26 @@ class RedIceSettingsState extends ItemWeightSettingsState<RedIceSettings> {
   @override
   Widget build(BuildContext context) {
     return buildSettingsUI('Red Ice Shuffle', itemWeightKeys.keys.toList());
+  }
+}
+
+// Sword Settings
+class SwordSettings extends StatefulWidget {
+  const SwordSettings({super.key});
+
+  @override
+  SwordSettingsState createState() => SwordSettingsState();
+}
+
+class SwordSettingsState extends ItemWeightSettingsState<SwordSettings> {
+  SwordSettingsState()
+      : super({
+        'Off': ItemWeightOption('swordStartWeight', 'Start with MM Sword and Shield, and OoT Master Sword'),
+        'On': ItemWeightOption('swordShufWeight', 'All sword shuffled into the pool, OoT and MM have shared sword in this setting'),
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Sword Shuffle', itemWeightKeys.keys.toList());
   }
 }
