@@ -42,6 +42,20 @@ class MainSettingsPage extends StatelessWidget {
                   PlayerCount(),
                   DistinctWorldsSettings(),
                   PresetSettings(),
+                  Container(height: 3, color: Theme.of(context).colorScheme.inversePrimary),
+                  Container(
+                    color: Theme.of(context).colorScheme.inversePrimary.withValues(alpha: 0.4),
+                    width: 1890,
+                    height: 35,
+                    alignment: Alignment.center,
+                    child: Text(
+                      'Minor and Memey Settings',
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  InstantTransformSettings(),
+                  HookshotAnywhereSettings(),
+                  ClimbSurfacesSettings(),
                 ]
               )
             ),
@@ -518,5 +532,67 @@ class MMAdultSettingsState extends MainWeightSettingsState<MMAdultSettings> {
   @override
   Widget build(BuildContext context) {
     return buildSettingsUI('Adult in MM', mainWeightKeys.keys.toList());
+  }
+}
+
+//  Instant Transform Settings
+class InstantTransformSettings extends StatefulWidget {
+  const InstantTransformSettings({super.key});
+
+  @override
+  InstantTransformSettingsState createState() => InstantTransformSettingsState();
+}
+
+class InstantTransformSettingsState extends MainWeightSettingsState<InstantTransformSettings> {
+  InstantTransformSettingsState()
+      : super({
+        "Choose": MainWeightOption('instantTransform', 'Enable Instant Transform in MM', options: ['true', 'false'], defaultValue: 'false'),
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Instant Transform', mainWeightKeys.keys.toList());
+  }
+}
+
+//  Preset Settings
+class HookshotAnywhereSettings extends StatefulWidget {
+  const HookshotAnywhereSettings({super.key});
+
+  @override
+  HookshotAnywhereSettingsState createState() => HookshotAnywhereSettingsState();
+}
+
+class HookshotAnywhereSettingsState extends MainWeightSettingsState<HookshotAnywhereSettings> {
+  HookshotAnywhereSettingsState()
+      : super({
+        "Off": MainWeightOption('hookshotAnywhereOffWeight', 'Normal Hookshot behaviour'),
+        "On": MainWeightOption('hookshotAnywhereOnWeight', "Hookshot works on all surfaces, and is expected in logic")
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Hookshot Anywhere', mainWeightKeys.keys.toList());
+  }
+}
+
+//  Preset Settings
+class ClimbSurfacesSettings extends StatefulWidget {
+  const ClimbSurfacesSettings({super.key});
+
+  @override
+  ClimbSurfacesSettingsState createState() => ClimbSurfacesSettingsState();
+}
+
+class ClimbSurfacesSettingsState extends MainWeightSettingsState<ClimbSurfacesSettings> {
+  ClimbSurfacesSettingsState()
+      : super({
+        "Off": MainWeightOption('climbSurfacesOffWeight', 'Normal climbing behaviour'),
+        "On": MainWeightOption('climbSurfacesOnWeight', "Climbing works on most surfaces, and is expected in logic in OoT")
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Climb Most Surfaces', mainWeightKeys.keys.toList());
   }
 }

@@ -437,6 +437,14 @@ class MainWeightSettings {
 
     "mmAdultTrueWeight": 'mmAdultTrueWeight',
     'mmAdultFalseWeight': 'mmAdultFalseWeight',
+
+    'instantTransform': 'instantTransform',
+
+    "hookshotAnywhereOnWeight": 'hookshotAnywhereOnWeight',
+    "hookshotAnywhereOffWeight": 'hookshotAnywhereOffWeight',
+
+    'climbSurfacesOnWeight': 'climbSurfacesOnWeight',
+    'climbSurfacesOffWeight': 'climbSurfacesOffWeight',
   };
 }
 
@@ -501,6 +509,7 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
     "DistinctWorlds": [mainWeights["distinctWorlds"]],
     
     "SharedItems": [mainWeights["sharedItems"]],
+    "InstantTransform": [mainWeights["instantTransform"]],
 
     "GameplaySettings": {
       "MinimumSettingsAmount": int.tryParse(mainWeights["minSettingsAmount"] ?? "") ?? 4,
@@ -592,7 +601,10 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       },
       "DecoupledEntrances":[[true, false], [worldWeights['decoupleTrueWeight'], worldWeights['decoupleFalseWeight']]],
       
-      "AgelessAmount":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], [worldWeights['ageless0Weight'], worldWeights['ageless1Weight'], worldWeights['ageless2Weight'], worldWeights['ageless3Weight'], worldWeights['ageless4Weight'], worldWeights['ageless5Weight'], worldWeights['ageless6Weight'], worldWeights['ageless7Weight'], worldWeights['ageless8Weight'], worldWeights['ageless9Weight'], worldWeights['ageless10Weight'], worldWeights['ageless11Weight']]]
+      "AgelessAmount":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], [worldWeights['ageless0Weight'], worldWeights['ageless1Weight'], worldWeights['ageless2Weight'], worldWeights['ageless3Weight'], worldWeights['ageless4Weight'], worldWeights['ageless5Weight'], worldWeights['ageless6Weight'], worldWeights['ageless7Weight'], worldWeights['ageless8Weight'], worldWeights['ageless9Weight'], worldWeights['ageless10Weight'], worldWeights['ageless11Weight']]],
+
+      "ClimbMostSurfaces": [[true, false], [int.tryParse(mainWeights['climbSurfacesOnWeight'] ?? "") ?? 0, int.tryParse(mainWeights['climbSurfacesOffWeight'] ?? "") ?? 100]],
+      "HookshotSurfaces":[[true, false], [int.tryParse(mainWeights['hookshotAnywhereOnWeight'] ?? "") ?? 0, int.tryParse(mainWeights['hookshotAnywhereOffWeight'] ?? "") ?? 100]],
     }
   };
 
