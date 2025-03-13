@@ -581,7 +581,7 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "TimeTravelSword":[[true, false], [worldWeights['timeSwordOpenWeight'], worldWeights['timeFreeOpenWeight']], [worldWeights['timeSwordClosedWeight'], worldWeights['timeFreeClosedWeight']]],
       
       "WorldEntranceRandomizer": [["None", "Regions Only", "Overworld Only", "Interiors Only", "Full"], [worldWeights['erNoneWeight'], worldWeights['erRegionWeight'], worldWeights['erExtWeight'], worldWeights['erIntWeight'], worldWeights['erFullWeight']]],
-      "GameLinkEntrances":[[true, false], [worldWeights['gameLinkTrueWeight'], worldWeights['gameLinkeFalseWeight']]],
+      "GameLinkEntrances":[[true, false], [worldWeights['gameLinkTrueWeight'], worldWeights['gameLinkFalseWeight']]],
       "WarpSongShuffle":[[true, false], [worldWeights['warpFullWeight'], worldWeights['warpNoneWeight']]],
       "DungeonEntranceShuffle": [[true, false], [worldWeights['dungErFullWeight'], worldWeights['dungErNoneWeight']]],
       "GanonCastleShuffle":[[true, false], [worldWeights['gcErIncWeight'], worldWeights['gcErExcWeight']]],
