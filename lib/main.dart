@@ -154,7 +154,6 @@ class _MyHomePageState extends State<MyHomePage> {
             Text("Mouse Wheel Scrolls Up and Down, Shift and Mouse Wheel Scrolls Left and Right"),
             Text("Adjust weights, hit Generate, then an output folder appears with the spoilers for the settings as well as the Seed String"),
             Text("Go to the ootmm website and input the string then generate your ROM."),
-            Text("Still working on it though, got to add Mixed Entrance Settings stuff, and some other small things so bear with me!"),
           ],
         ),
       ),

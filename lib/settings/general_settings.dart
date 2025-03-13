@@ -35,6 +35,7 @@ class MainSettingsPage extends StatelessWidget {
                   WinConSettings(),
                   PiecesRequired(),
                   SettingsAmount(),
+                  MMAdultSettings(),
                   SharedItemsSettings(),
                   ItemPoolSettings(),
                   MultiplayerSettings(),
@@ -496,5 +497,26 @@ class PiecesRequiredState extends MainWeightSettingsState<PiecesRequired> {
   @override
   Widget build(BuildContext context) {
     return buildSettingsUI('Triforce Pieces Required in Hunt', mainWeightKeys.keys.toList());
+  }
+}
+
+//  MM Adult Weight
+class MMAdultSettings extends StatefulWidget {
+  const MMAdultSettings({super.key});
+
+  @override
+  MMAdultSettingsState createState() => MMAdultSettingsState();
+}
+
+class MMAdultSettingsState extends MainWeightSettingsState<MMAdultSettings> {
+  MMAdultSettingsState()
+      : super({
+        "True": MainWeightOption('mmAdultTrueWeight', 'Allow Adult Link in MM'),
+        "False": MainWeightOption('mmAdultFalseWeight', 'Link is always Child in MM'),
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Adult in MM', mainWeightKeys.keys.toList());
   }
 }

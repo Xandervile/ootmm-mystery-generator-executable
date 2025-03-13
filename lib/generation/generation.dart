@@ -15,6 +15,10 @@ class ItemWeightSettings {
     'smallKeysyWeight': 'smallKeysyWeight',
     'smallKeysOwnDungWeight': 'smallKeysOwnDungWeight',
     'smallKeysAnywhereWeight': 'smallKeysAnywhereWeight',
+
+    'tcgStandardWeight': 'tcgStandardWeight',
+    'tcgOwnDungWeight': 'tcgOwnDungWeight',
+    'tcgAnywhereWeight': 'tcgAnywhereWeight',
     
     'bossKeysyWeight': 'bossKeysyWeight',
     'bossKeysOwnDungWeight': 'bossKeysOwnDungWeight',
@@ -44,6 +48,10 @@ class ItemWeightSettings {
     'soulsNPCWeight': 'soulsNPCWeight',
     'soulsEnemyWeight': 'soulsEnemyWeight',
     'soulsFullWeight': 'soulsFullWeight',
+    'souls0Weight': 'souls0Weight',
+    'souls25Weight': 'souls25Weight',
+    'souls50Weight': 'souls50Weight',
+    'souls75Weight': 'souls75Weight',
     
     'bossSoulsNoneWeight': 'bossSoulsNoneWeight',
     'bossSoulsFullWeight': 'bossSoulsFullWeight',
@@ -58,11 +66,21 @@ class ItemWeightSettings {
     'clocksAscWeight': 'clocksAscWeight',
     'clocksDescWeight': 'clocksDescWeight',
     'clocksSepWeight': 'clocksSepWeight',
+    'clock1Weight': 'clock1Weight',
+    'clock2Weight': 'clock2Weight',
+    'clock3Weight': 'clock3Weight',
+    'clock4Weight': 'clock4Weight',
+    'clock5Weight': 'clock5Weight',
     
     'buttonStartWeight': 'buttonStartWeight',
     'buttonFullWeight': 'buttonFullWeight',
     'buttonStartSongShufWeight': 'buttonStartSongShufWeight',
     'buttonFullSongShufWeight': 'buttonFullSongShufWeight',
+    'button0Weight': 'button0Weight',
+    'button1Weight': 'button1Weight',
+    'button2Weight': 'button2Weight',
+    'button3Weight': 'button3Weight',
+    'button4Weight': 'button4Weight',
     
     'potNoneWeight': 'potNoneWeight',
     'potOwWeight': 'potOwWeight',
@@ -125,6 +143,16 @@ class ItemWeightSettings {
 
     "redIceNoneWeight": "redIceNoneWeight",
     "redIceFullWeight": "redIceFullWeight",
+
+    'gerudoStartWeight': 'gerudoStartWeight',
+    'gerudoVanillaWeight': 'gerudoVanillaWeight',
+    'gerudoAnywhereWeight': 'gerudoAnywhereWeight',
+
+    'childWalletStartWeight': 'childWalletStartWeight',
+    'childWalletShufWeight': 'childWalletShufWeight',
+    'maxWalletGiant': 'maxWalletGiant',
+    'maxWalletColossal': 'maxWalletColossal',
+    'maxWalletBottomless': 'maxWalletBottomless'
   };
 }
 
@@ -224,6 +252,124 @@ class WorldWeightSettings {
 
     'grottoErNoneWeight': 'grottoErNoneWeight',
     'grottoErFullWeight': 'grottoErFullWeight',
+
+    'decoupleFalseWeight': 'decoupleFalseWeight',
+    'decoupleTrueWeight': 'decoupleTrueWeight',
+
+    'mixedErFalseWeight': 'mixedErFalseWeight',
+    'mixedErTrueWeight': 'mixedErTrueWeight',
+
+    'mixedRegionErFalseWeight': 'mixedRegionErFalseWeight',
+    'mixedRegionErTrueWeight': 'mixedRegionErTrueWeight',
+
+    'mixedExteriorErFalseWeight': 'mixedExteriorErFalseWeight',
+    'mixedExteriorErTrueWeight': 'mixedExteriorErTrueWeight',
+
+    'mixedInteriorErFalseWeight': 'mixedInteriorErFalseWeight',
+    'mixedInteriorErTrueWeight': 'mixedInteriorErTrueWeight',
+
+    'mixedDungeonErFalseWeight': 'mixedDungeonErFalseWeight',
+    'mixedDungeonErTrueWeight': 'mixedDungeonErTrueWeight',
+
+    'mixedGrottoErFalseWeight': 'mixedGrottoErFalseWeight',
+    'mixedGrottoErTrueWeight': 'mixedGrottoErTrueWeight',
+
+    'gameLinkFalseWeight': 'gameLinkFalseWeight',
+    'gameLinkTrueWeight': 'gameLinkTrueWeight',
+
+    'warpNoneWeight': 'warpNoneWeight',
+    'warpFullWeight': 'warpFullWeight',
+
+    'openDungeon0Weight': 'openDungeon0Weight',
+    'openDungeon1Weight': 'openDungeon1Weight',
+    'openDungeon2Weight': 'openDungeon2Weight',
+    'openDungeon3Weight': 'openDungeon3Weight',
+    'openDungeon4Weight': 'openDungeon4Weight',
+    'openDungeon5Weight': 'openDungeon5Weight',
+    'openDungeon6Weight': 'openDungeon6Weight',
+    'openDungeon7Weight': 'openDungeon7Weight',
+    'openDungeon8Weight': 'openDungeon8Weight',
+    'openDungeon9Weight': 'openDungeon9Weight',
+
+    'mqDungeon0Weight': 'mqDungeon0Weight',
+    'mqDungeon1Weight': 'mqDungeon1Weight',
+    'mqDungeon2Weight': 'mqDungeon2Weight',
+    'mqDungeon3Weight': 'mqDungeon3Weight',
+    'mqDungeon4Weight': 'mqDungeon4Weight',
+    'mqDungeon5Weight': 'mqDungeon5Weight',
+    'mqDungeon6Weight': 'mqDungeon6Weight',
+    'mqDungeon7Weight': 'mqDungeon7Weight',
+    'mqDungeon8Weight': 'mqDungeon8Weight',
+    'mqDungeon9Weight': 'mqDungeon9Weight',
+    'mqDungeon10Weight': 'mqDungeon10Weight',
+    'mqDungeon11Weight': 'mqDungeon11Weight',
+    'mqDungeon12Weight': 'mqDungeon12Weight',
+    
+    'silverPouch0Weight': 'silverPouch0Weight',
+    'silverPouch1Weight': 'silverPouch1Weight',
+    'silverPouch2Weight': 'silverPouch2Weight',
+    'silverPouch3Weight': 'silverPouch3Weight',
+    'silverPouch4Weight': 'silverPouch4Weight',
+    'silverPouch5Weight': 'silverPouch5Weight',
+    'silverPouch6Weight': 'silverPouch6Weight',
+    'silverPouch7Weight': 'silverPouch7Weight',
+    'silverPouch8Weight': 'silverPouch8Weight',
+    'silverPouch9Weight': 'silverPouch9Weight',
+    'silverPouch10Weight': 'silverPouch10Weight',
+    'silverPouch11Weight': 'silverPouch11Weight',
+    'silverPouch12Weight': 'silverPouch12Weight',
+    'silverPouch13Weight': 'silverPouch13Weight',
+    'silverPouch14Weight': 'silverPouch14Weight',
+    'silverPouch15Weight': 'silverPouch15Weight',
+    'silverPouch16Weight': 'silverPouch16Weight',
+    'silverPouch17Weight': 'silverPouch17Weight',
+    'silverPouch18Weight': 'silverPouch18Weight',
+
+    'keyRing0Weight': 'keyRing0Weight',
+    'keyRing1Weight': 'keyRing1Weight',
+    'keyRing2Weight': 'keyRing2Weight',
+    'keyRing3Weight': 'keyRing3Weight',
+    'keyRing4Weight': 'keyRing4Weight',
+    'keyRing5Weight': 'keyRing5Weight',
+    'keyRing6Weight': 'keyRing6Weight',
+    'keyRing7Weight': 'keyRing7Weight',
+    'keyRing8Weight': 'keyRing8Weight',
+    'keyRing9Weight': 'keyRing9Weight',
+    'keyRing10Weight': 'keyRing10Weight',
+    'keyRing11Weight': 'keyRing11Weight',
+    'keyRing12Weight': 'keyRing12Weight',
+    'keyRing13Weight': 'keyRing13Weight',
+
+    'ageless0Weight': 'ageless0Weight',
+    'ageless1Weight': 'ageless1Weight',
+    'ageless2Weight': 'ageless2Weight',
+    'ageless3Weight': 'ageless3Weight',
+    'ageless4Weight': 'ageless4Weight',
+    'ageless5Weight': 'ageless5Weight',
+    'ageless6Weight': 'ageless6Weight',
+    'ageless7Weight': 'ageless7Weight',
+    'ageless8Weight': 'ageless8Weight',
+    'ageless9Weight': 'ageless9Weight',
+    'ageless10Weight': 'ageless10Weight',
+    'ageless11Weight': 'ageless11Weight',
+
+    'gibdoVanillaWeight': 'gibdoVanillaWeight',
+    'gibdoRemorselessWeight': 'gibdoRemorselessWeight',
+    'gibdoRemovedWeight': 'gibdoRemovedWeight',
+    'gibdoVanillaErWeight': 'gibdoVanillaErWeight',
+    'gibdoRemorselessErWeight': 'gibdoRemorselessErWeight',
+    'gibdoRemovedErWeight': 'gibdoRemovedErWeight',
+
+    'trials0Weight': 'trials0Weight',
+    'trials1Weight': 'trials1Weight',
+    'trials2Weight': 'trials2Weight',
+    'trials3Weight': 'trials3Weight',
+    'trials4Weight': 'trials4Weight',
+    'trials5Weight': 'trials5Weight',
+    'trials6Weight': 'trials6Weight',
+
+    'mmUsLayoutWeight': 'mmUsLayoutWeight',
+    'mmJpLayoutWeight': 'mmJpLayoutWeight'
   };
 }
 
@@ -288,6 +434,9 @@ class MainWeightSettings {
     "pieces30Weight": "pieces30Weight",
     "pieces35Weight": "pieces35Weight",
     "pieces40Weight": "pieces40Weight",
+
+    "mmAdultTrueWeight": 'mmAdultTrueWeight',
+    'mmAdultFalseWeight': 'mmAdultFalseWeight',
   };
 }
 
@@ -358,8 +507,8 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "MaximumSettingsAmount": int.tryParse(mainWeights["maxSettingsAmount"] ?? "") ?? 99,
       "HardModeLimit": int.tryParse(mainWeights["hardModeLimit"] ?? "") ?? 2,
       "TFGrassAllowed":[false],
-      "AdultInMM":[[true, false], [100, 0]],
-      "MMWorldLayout":[["us", "jp"], [100, 0]],
+      "AdultInMM":[[true, false], [int.tryParse(mainWeights["mmAdultTrueWeight"] ?? "") ?? 100, int.tryParse(mainWeights["mmAdultFalseWeight"] ?? "") ?? 0]],
+      "MMWorldLayout":[["us", "jp"], [worldWeights['mmUsLayoutWeight'], worldWeights['mmJpLayoutWeight']]],
       
       "SongShuffle": [["Song Locations", "Mixed with Owls", "Dungeon Rewards", "Anywhere"], [itemWeights['songLocationsWeight'], itemWeights['songOwlsWeight'], itemWeights['songRewardsWeight'], itemWeights['songAnywhereWeight']]],
       "GrassShuffle": [["none", "dungeons", "overworld", "all"], [itemWeights['grassNoneWeight'], itemWeights['grassDungWeight'], itemWeights['grassOwWeight'], itemWeights['grassFullWeight']]],
@@ -374,7 +523,7 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "SnowballShuffle":[["none", "dungeons", "overworld", "all"], [itemWeights['snowballNoneWeight'], itemWeights['snowballDungWeight'], itemWeights['snowballOwWeight'], itemWeights['snowballFullWeight']]],
       "OoTSkulltulaShuffle":[["none", "Dungeons Only", "Overworld Only", "all"], [itemWeights['skullVanWeight'], itemWeights['skullDungWeight'], itemWeights['skullOwWeight'], itemWeights['skullFullWeight']]],
       "MMSkulltulaShuffle":[["none", "cross", "all"], [itemWeights['skullMmVanWeight'], itemWeights['skullMmCrossWeight'], itemWeights['skullMmFullWeight']]],
-      "GerudoCardShuffle":[["starting", true, false], [20, 20, 60]],
+      "GerudoCardShuffle":[["starting", true, false], [itemWeights['gerudoStartWeight'], itemWeights['gerudoAnywhereWeight'], itemWeights['gerudoVanillaWeight']]],
       "FishingPondShuffle":[[true, false], [itemWeights['fishingFullWeight'], itemWeights['fishingNoneWeight']]],
       "DivingGameShuffle":[[true, false], [itemWeights['divingFullWeight'], itemWeights['divingNoneWeight']]],
       "HiveShuffle":[[true, false], [itemWeights['hiveFullWeight'], itemWeights['hiveNoneWeight']]],
@@ -387,34 +536,34 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "ShopShuffle":[["none", "full"], [itemWeights['shopVanWeight'], itemWeights['shopFullWeight']]],
       "MerchantShuffle":[[true, false], [itemWeights['merchFullWeight'], itemWeights['merchVanWeight']]],
       "PriceShuffle":[["Affordable", "Vanilla", "Weighted Random", "Fully Random"], [worldWeights["priceAffordableWeight"], worldWeights["priceVanillaWeight"], worldWeights["priceWeightedWeight"], worldWeights["priceRandomWeight"]]],
-      "ChildWallet":[[true, false], [10, 90]],
-      "MaxWalletSize":[["Giant", "Colossal", "Bottomless"], [40, 30, 30]],
+      "ChildWallet":[[true, false], [itemWeights['childWalletShufWeight'], itemWeights['childWalletStartWeight']]],
+      "MaxWalletSize":[["Giant", "Colossal", "Bottomless"], [itemWeights['maxWalletGiant'], itemWeights['maxWalletColossal'], itemWeights['maxWalletBottomless']]],
 
-      "OwlShuffle":[[true, false], [10, 90], [itemWeights['owlAnywhereErWeight'], itemWeights['owlVanErWeight']]],
+      "OwlShuffle":[[true, false], [itemWeights['owlAnywhereWeight'], itemWeights['owlVanWeight']], [itemWeights['owlAnywhereErWeight'], itemWeights['owlVanErWeight']]],
       
       "SoulShuffle":[["None", "Enemy", "NPC", "Full"], [itemWeights['soulsNoneWeight'], itemWeights['soulsEnemyWeight'], itemWeights['soulsNPCWeight'], itemWeights['soulsFullWeight']]],
-      "StartingEnemySoulPercentage":[[0, 25, 50, 75, 100], [0, 20, 60, 20, 0]],
-      "StartingNPCSoulPercentage":[[0, 25, 50, 75, 100], [0, 20, 60, 20, 0]],
+      "StartingEnemySoulPercentage":[[0, 25, 50, 75], [itemWeights['souls0Weight'], itemWeights['souls25Weight'], itemWeights['souls50Weight'], itemWeights['souls75Weight']]],
+      "StartingNPCSoulPercentage":[[0, 25, 50, 75], [itemWeights['souls0Weight'], itemWeights['souls25Weight'], itemWeights['souls50Weight'], itemWeights['souls75Weight']]],
       
       "ClockShuffle":[[true, false], [itemWeights['clocksFullWeight'], itemWeights['clocksNoneWeight']]],
       "ProgressiveClockType":[["Ascending", "Descending", "Separate"], [itemWeights['clocksAscWeight'], itemWeights['clocksDescWeight'], itemWeights['clocksSepWeight']]],
-      "StartingClockAmount": [[1, 2, 3, 4, 5], [10, 20, 40, 20, 10]], 
+      "StartingClockAmount": [[1, 2, 3, 4, 5], [itemWeights['clock1Weight'], itemWeights['clock2Weight'], itemWeights['clock3Weight'], itemWeights['clock4Weight'], itemWeights['clock5Weight']]], 
       
       "OcarinaButtons":[[true, false], [itemWeights['buttonFullWeight'], itemWeights['buttonStartWeight']], [itemWeights['buttonFullSongShufWeight'], itemWeights['buttonStartSongShufWeight']]],
-      "StartingButtons":[[0, 1, 2, 3, 4], [5, 20, 30, 30, 15]],
+      "StartingButtons":[[0, 1, 2, 3, 4], [itemWeights['button0Weight'], itemWeights['button1Weight'], itemWeights['button2Weight'], itemWeights['button3Weight'], itemWeights['button4Weight']]],
       
       "SilverRupeeShuffle": [["Untouched", "Own Dungeon", "anywhere"], [itemWeights['silvVanWeight'], itemWeights['silvOwnDungWeight'], itemWeights['silvAnywhereWeight']]],
       "SmallKeyShuffle":[["MM Keysy, OoT Own Dungeon", "MM and OoT Keysy", "MM and OoT Own Dungeons", "MM and OoT Keysanity"], [itemWeights['smallKeysStandardWeight'], itemWeights['smallKeysyWeight'], itemWeights['smallKeysOwnDungWeight'], itemWeights['smallKeysAnywhereWeight']]],
       "BossKeyShuffle":[["Keysy", "Own Dungeon", "Keysanity"], [itemWeights['bossKeysyWeight'], itemWeights['bossKeysOwnDungWeight'], itemWeights['bossKeysAnywhereWeight']]],
       "BossSoulsWeight": [[true, false], [itemWeights['bossSoulsFullWeight'], itemWeights['bossSoulsNoneWeight']], [itemWeights['bossSoulsBKFullWeight'], itemWeights['bossSoulsBKNoneWeight']]],
       "StrayFairyShuffle": [["Removed", "Anywhere"], [itemWeights['strayFairyChestsWeight'], itemWeights['strayFairyAllWeight']]],
-      "MQDungeonAmount":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1]],
-      "GibdoSettings":[["vanilla", "remorseless", "open"], [0, 90, 10], [0, 30, 70]],
-      "OpenDungeons":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [1024, 256, 128, 64, 32, 16, 8, 4, 2, 1]],
-      "GanonTrialAmount":[[0, 1, 2, 3, 4, 5, 6], [64, 32, 16, 8, 4, 2, 1]],
-      "TCGKeySettings":[["vanilla", "ownDungeon", "anywhere"], [60, 30, 10]],
-      "KeyRingAmount":[["0 - 12/13 depending on TCG"], [4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1], [8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1]],
-      "SilverPouchAmount":[["0 - 18, if the value is above the amount of Silver Pouches available due to MQ, it rerolls"], [262144, 131072, 65536, 32768, 16384, 8192, 4096, 2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1]],
+      "MQDungeonAmount":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], [worldWeights['mqDungeon0Weight'], worldWeights['mqDungeon1Weight'], worldWeights['mqDungeon2Weight'], worldWeights['mqDungeon3Weight'], worldWeights['mqDungeon4Weight'], worldWeights['mqDungeon5Weight'], worldWeights['mqDungeon6Weight'], worldWeights['mqDungeon7Weight'], worldWeights['mqDungeon8Weight'], worldWeights['mqDungeon9Weight'], worldWeights['mqDungeon10Weight'], worldWeights['mqDungeon11Weight'], worldWeights['mqDungeon12Weight']]],
+      "GibdoSettings":[["vanilla", "remorseless", "open"], [worldWeights['gibdoVanillaWeight'], worldWeights['gibdoRemorselessWeight'], worldWeights['gibdoRemovedWeight']], [worldWeights['gibdoVanillaErWeight'], worldWeights['gibdoRemorselessErWeight'], worldWeights['gibdoRemovedErWeight']]],
+      "OpenDungeons":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9], [worldWeights['openDungeon0Weight'], worldWeights['openDungeon1Weight'], worldWeights['openDungeon2Weight'], worldWeights['openDungeon3Weight'], worldWeights['openDungeon4Weight'], worldWeights['openDungeon5Weight'], worldWeights['openDungeon6Weight'], worldWeights['openDungeon7Weight'], worldWeights['openDungeon8Weight'], worldWeights['openDungeon9Weight']]],
+      "GanonTrialAmount":[[0, 1, 2, 3, 4, 5, 6], [worldWeights['trials0Weight'], worldWeights['trials1Weight'], worldWeights['trials2Weight'], worldWeights['trials3Weight'], worldWeights['trials4Weight'], worldWeights['trials5Weight'], worldWeights['trials6Weight']]],
+      "TCGKeySettings":[["vanilla", "ownDungeon", "anywhere"], [itemWeights['tcgStandardWeight'], itemWeights['tcgOwnDungWeight'], itemWeights['tcgAnywhereWeight']]],
+      "KeyRingAmount":[["0 - 12/13 depending on TCG"], [worldWeights['keyRing0Weight'], worldWeights['keyRing1Weight'], worldWeights['keyRing2Weight'], worldWeights['keyRing3Weight'], worldWeights['keyRing4Weight'], worldWeights['keyRing5Weight'], worldWeights['keyRing6Weight'], worldWeights['keyRing7Weight'], worldWeights['keyRing8Weight'], worldWeights['keyRing9Weight'], worldWeights['keyRing10Weight'], worldWeights['keyRing11Weight'], worldWeights['keyRing12Weight']], [worldWeights['keyRing0Weight'], worldWeights['keyRing1Weight'], worldWeights['keyRing2Weight'], worldWeights['keyRing3Weight'], worldWeights['keyRing4Weight'], worldWeights['keyRing5Weight'], worldWeights['keyRing6Weight'], worldWeights['keyRing7Weight'], worldWeights['keyRing8Weight'], worldWeights['keyRing9Weight'], worldWeights['keyRing10Weight'], worldWeights['keyRing11Weight'], worldWeights['keyRing12Weight'], worldWeights['keyRing13Weight']]],
+      "SilverPouchAmount":[["0 - 18, if the value is above the amount of Silver Pouches available due to MQ, it rerolls"], [worldWeights['silverPouch0Weight'], worldWeights['silverPouch1Weight'], worldWeights['silverPouch2Weight'], worldWeights['silverPouch3Weight'], worldWeights['silverPouch4Weight'], worldWeights['silverPouch5Weight'], worldWeights['silverPouch6Weight'], worldWeights['silverPouch7Weight'], worldWeights['silverPouch8Weight'], worldWeights['silverPouch9Weight'], worldWeights['silverPouch10Weight'], worldWeights['silverPouch11Weight'], worldWeights['silverPouch12Weight'], worldWeights['silverPouch13Weight'], worldWeights['silverPouch14Weight'], worldWeights['silverPouch15Weight'], worldWeights['silverPouch16Weight'], worldWeights['silverPouch17Weight'], worldWeights['silverPouch18Weight']]],
       
       "DekuTree":[["closed", "vanilla", "open"], [worldWeights['dekuClosedWeight'], worldWeights['dekuVanWeight'], worldWeights['dekuOpenWeight']]],
       "KingZora":[["vanilla", "adult", "open"], [worldWeights['zoraClosedWeight'], worldWeights['zoraAdultWeight'], worldWeights['zoraOpenWeight']], [worldWeights['zoraClosedErWeight'], worldWeights['zoraAdultErWeight'], worldWeights['zoraOpenErWeight']]],
@@ -423,8 +572,8 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "TimeTravelSword":[[true, false], [worldWeights['timeSwordOpenWeight'], worldWeights['timeFreeOpenWeight']], [worldWeights['timeSwordClosedWeight'], worldWeights['timeFreeClosedWeight']]],
       
       "WorldEntranceRandomizer": [["None", "Regions Only", "Overworld Only", "Interiors Only", "Full"], [worldWeights['erNoneWeight'], worldWeights['erRegionWeight'], worldWeights['erExtWeight'], worldWeights['erIntWeight'], worldWeights['erFullWeight']]],
-      "GameLinkEntrances":[[true, false], [20, 80]],
-      "WarpSongShuffle":[[true, false], [10, 90]],
+      "GameLinkEntrances":[[true, false], [worldWeights['gameLinkTrueWeight'], worldWeights['gameLinkeFalseWeight']]],
+      "WarpSongShuffle":[[true, false], [worldWeights['warpFullWeight'], worldWeights['warpNoneWeight']]],
       "DungeonEntranceShuffle": [[true, false], [worldWeights['dungErFullWeight'], worldWeights['dungErNoneWeight']]],
       "GanonCastleShuffle":[[true, false], [worldWeights['gcErIncWeight'], worldWeights['gcErExcWeight']]],
       "GanonTowerShuffle":[[true, false], [worldWeights['gtErIncWeight'], worldWeights['gtErExcWeight']]],
@@ -434,16 +583,16 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
       "SpawnShuffle":[["none", "child", "adult", "both"], [worldWeights['spawnNoneWeight'], worldWeights['spawnChildWeight'], worldWeights['spawnAdultWeight'], worldWeights['spawnFullWeight']]],
       
       "Mixed":{
-      "Allow":[[true, false], [0, 100]],
-      "Regions":[[true, false], [0, 100]],
-      "Overworld":[[true, false], [0, 100]],
-      "Interior":[[true, false], [0, 100]],
-      "Grottos":[[true, false], [100, 0]],
-      "Dungeons":[[true, false], [100, 0]]
+      "Allow":[[true, false], [worldWeights['mixedErTrueWeight'], worldWeights['mixedErFalseWeight']]],
+      "Regions":[[true, false], [worldWeights['mixedRegionErTrueWeight'], worldWeights['mixedRegionErFalseWeight']]],
+      "Overworld":[[true, false], [worldWeights['mixedExteriorErTrueWeight'], worldWeights['mixedExteriorErFalseWeight']]],
+      "Interior":[[true, false], [worldWeights['mixedInteriorErTrueWeight'], worldWeights['mixedInteriorErFalseWeight']]],
+      "Grottos":[[true, false], [worldWeights['mixedGrottoErTrueWeight'], worldWeights['mixedGrottoErFalseWeight']]],
+      "Dungeons":[[true, false], [worldWeights['mixedDungeonErTrueWeight'], worldWeights['mixedDungeonErFalseWeight']]]
       },
-      "DecoupledEntrances":[[true, false], [0, 100]],
+      "DecoupledEntrances":[[true, false], [worldWeights['decoupleTrueWeight'], worldWeights['decoupleFalseWeight']]],
       
-      "AgelessAmount":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], [2048, 1024, 512, 256, 128, 64, 32, 16, 8, 4, 2, 1]]
+      "AgelessAmount":[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], [worldWeights['ageless0Weight'], worldWeights['ageless1Weight'], worldWeights['ageless2Weight'], worldWeights['ageless3Weight'], worldWeights['ageless4Weight'], worldWeights['ageless5Weight'], worldWeights['ageless6Weight'], worldWeights['ageless7Weight'], worldWeights['ageless8Weight'], worldWeights['ageless9Weight'], worldWeights['ageless10Weight'], worldWeights['ageless11Weight']]]
     }
   };
 

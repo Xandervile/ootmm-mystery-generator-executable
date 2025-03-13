@@ -34,13 +34,17 @@ class ItemSettingsPage extends StatelessWidget {
                   SongSettings(),
                   OwlSettings(),
                   SoulSettings(),
+                  SoulStartSettings(),
                   ClockSettings(),
+                  ClockStartSettings(),
                   ButtonSettings(),
+                  ButtonStartSettings(),
                   SkullSettings(),
                   PotSettings(),
                   WonderSpotSettings(),
                   FreestandingSettings(),
                   ShopSettings(),
+                  WalletSettings(),
                   SwordSettings(),
                   CratesBarrelsSettings(),
                   GrassSettings(),
@@ -66,6 +70,8 @@ class ItemSettingsPage extends StatelessWidget {
                     ),
                   ),
                   SmallKeySettings(),
+                  TCGSettings(),
+                  GerudoCardSettings(),
                   BossKeySettings(),
                   SilverRupeeSettings(),
                   StrayFairySettings(),
@@ -307,6 +313,28 @@ class SmallKeySettingsState extends ItemWeightSettingsState<SmallKeySettings> {
   }
 }
 
+// Small Key Settings
+class TCGSettings extends StatefulWidget {
+  const TCGSettings({super.key});
+
+  @override
+  TCGSettingsState createState() => TCGSettingsState();
+}
+
+class TCGSettingsState extends ItemWeightSettingsState<TCGSettings> {
+  TCGSettingsState()
+      : super({
+        'Vanilla': ItemWeightOption('tcgStandardWeight', 'Market Chest Game requires Lens'),
+        'Own Game': ItemWeightOption('tcgOwnDungWeight', 'Market Chest Game does not require Lens'),
+        'Anywhere': ItemWeightOption('tcgAnywhereWeight', 'Market Chest Game Keys are anywhere in the world')
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Market Chest Game Settings (no Keysanity)', itemWeightKeys.keys.toList());
+  }
+}
+
 // Boss Key Settings
 class BossKeySettings extends StatefulWidget {
   const BossKeySettings({super.key});
@@ -444,6 +472,28 @@ class SoulSettingsState extends ItemWeightSettingsState<SoulSettings> {
   }
 }
 
+class SoulStartSettings extends StatefulWidget {
+  const SoulStartSettings({super.key});
+
+  @override
+  SoulStartSettingsState createState() => SoulStartSettingsState();
+}
+
+class SoulStartSettingsState extends ItemWeightSettingsState<SoulStartSettings> {
+  SoulStartSettingsState()
+      : super({
+        '0%': ItemWeightOption('souls0Weight', 'If Souls are shuffled, start with 0 Souls'),
+        '25%': ItemWeightOption('souls25Weight', 'If Souls are shuffled, start with 25% of the Souls'),
+        '50%': ItemWeightOption('souls50Weight', 'If Souls are shuffled, start with 50% of the Souls'),
+        '75%': ItemWeightOption('souls75Weight', 'If Souls are shuffled, start with 75% of the Souls')
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Soul Start%', itemWeightKeys.keys.toList());
+  }
+}
+
 // Boss Souls Settings
 class BossSoulSettings extends StatefulWidget {
   const BossSoulSettings({super.key});
@@ -491,6 +541,30 @@ class ClockSettingsState extends ItemWeightSettingsState<ClockSettings> {
   }
 }
 
+// Clock Start Settings
+class ClockStartSettings extends StatefulWidget {
+  const ClockStartSettings({super.key});
+
+  @override
+  ClockStartSettingsState createState() => ClockStartSettingsState();
+}
+
+class ClockStartSettingsState extends ItemWeightSettingsState<ClockStartSettings> {
+  ClockStartSettingsState()
+      : super({
+        '1': ItemWeightOption('clock1Weight', 'Start with 1 Clock in MM'),
+        '2': ItemWeightOption('clock2Weight', 'Start with 2 Clocks in MM'),
+        '3': ItemWeightOption('clock3Weight', 'Start with 3 Clocks in MM'),
+        '4': ItemWeightOption('clock4Weight', 'Start with 4 Clocks in MM'),
+        '5': ItemWeightOption('clock5Weight', 'Start with 5 Clocks in MM')
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Clock Start Amount', itemWeightKeys.keys.toList());
+  }
+}
+
 // Ocarina Button Settings
 class ButtonSettings extends StatefulWidget {
   const ButtonSettings({super.key});
@@ -511,6 +585,30 @@ class ButtonSettingsState extends ItemWeightSettingsState<ButtonSettings> {
   @override
   Widget build(BuildContext context) {
     return buildSettingsUI('Ocarina Buttons', itemWeightKeys.keys.toList());
+  }
+}
+
+// Ocarina Button Start Settings
+class ButtonStartSettings extends StatefulWidget {
+  const ButtonStartSettings({super.key});
+
+  @override
+  ButtonStartSettingsState createState() => ButtonStartSettingsState();
+}
+
+class ButtonStartSettingsState extends ItemWeightSettingsState<ButtonStartSettings> {
+  ButtonStartSettingsState()
+      : super({
+        '0': ItemWeightOption('button0Weight', 'Start with 0 Ocarina Buttons'),
+        '1': ItemWeightOption('button1Weight', 'Start with 1 Ocarina Button'),
+        '2': ItemWeightOption('button2Weight', 'Start with 2 Ocarina Buttons'),
+        '3': ItemWeightOption('button3Weight', 'Start with 3 Ocarina Buttons'),
+        '4': ItemWeightOption('button4Weight', 'Start with 4 Ocarina Buttons')
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Ocarina Buttons Start Amount', itemWeightKeys.keys.toList());
   }
 }
 
@@ -883,5 +981,51 @@ class SwordSettingsState extends ItemWeightSettingsState<SwordSettings> {
   @override
   Widget build(BuildContext context) {
     return buildSettingsUI('Sword Shuffle', itemWeightKeys.keys.toList());
+  }
+}
+
+// Gerudo Card Settings
+class GerudoCardSettings extends StatefulWidget {
+  const GerudoCardSettings({super.key});
+
+  @override
+  GerudoCardSettingsState createState() => GerudoCardSettingsState();
+}
+
+class GerudoCardSettingsState extends ItemWeightSettingsState<GerudoCardSettings> {
+  GerudoCardSettingsState()
+      : super({
+        'Start With': ItemWeightOption('gerudoStartWeight', 'Start with Gerudo Card'),
+        'Vanilla': ItemWeightOption('gerudoVanillaWeight', 'Gerudo Card is vanilla (Fast Carpenters is on)'),
+        'Anywhere': ItemWeightOption('gerudoAnywhereWeight', 'Gerudo Card is anywhere in the world')
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Gerudo Card Settings', itemWeightKeys.keys.toList());
+  }
+}
+
+// Wallet Settings
+class WalletSettings extends StatefulWidget {
+  const WalletSettings({super.key});
+
+  @override
+  WalletSettingsState createState() => WalletSettingsState();
+}
+
+class WalletSettingsState extends ItemWeightSettingsState<WalletSettings> {
+  WalletSettingsState()
+      : super({
+        'Child Wallet Start': ItemWeightOption('childWalletStartWeight', 'Start with Child Wallet'),
+        'Child Wallet Shuffle': ItemWeightOption('childWalletShufWeight', 'Child Wallet Shuffled'),
+        'Giant Max Wallet': ItemWeightOption('maxWalletGiant', 'Giant Wallet is max wallet in Price Shuffle'),
+        'Colossal Max Wallet': ItemWeightOption('maxWalletColossal', 'Giant Wallet is max wallet in Price Shuffle'),
+        'Bottomless Max Wallet': ItemWeightOption('maxWalletBottomless', 'Giant Wallet is max wallet in Price Shuffle')
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Wallet Settings', itemWeightKeys.keys.toList());
   }
 }
