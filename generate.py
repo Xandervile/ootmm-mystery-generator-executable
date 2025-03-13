@@ -560,8 +560,10 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
     if SettingsList["goldSkulltulaTokens"] != "none" or SettingsList["housesSkulltulaTokens"] != "none":
         MysteryCount += 1
     if SettingsList["housesSkulltulaTokens"] == "cross":
-        JunkList.remove("OOT Skulltula House 40 Tokens")
-        JunkList.remove("OOT Skulltula House 50 Tokens")
+        if "OOT Skulltula House 40 Tokens" in JunkList:
+            JunkList.remove("OOT Skulltula House 40 Tokens")
+        if "OOT Skulltula House 50 Tokens" in JunkList:
+            JunkList.remove("OOT Skulltula House 50 Tokens")
 
     SoulShuffle = random.choices(["None", "Enemy", "NPC", "Full"], settings["SoulShuffle"][1])[0]
     if SoulShuffle != "None":
@@ -683,6 +685,9 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
         SettingsList["shuffleIciclesOot"] = True
         SettingsList["shuffleIciclesMm"] = True
         MysteryCount += 1
+
+    RedIceShuffle = random.choices([True, False], settings["RedIceShuffle"][1])[0]
+    SettingsList["shuffleRedIceOot"] = RedIceShuffle
     
     SettingsList["erSpawns"] = random.choices(["none", "child", "adult", "both"], settings["SpawnShuffle"][1])[0]
 
@@ -690,8 +695,6 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
     SettingsList["beneathWell"] = random.choices(["vanilla", "remorseless", "open"], WellWeight)[0]
 
     OpenDungeonsWeight = settings["OpenDungeons"][1]
-    if DungeonEntranceShuffle == True:
-        OpenDungeonsWeight = settings["OpenDungeons"][2]
     OpenDungeonAmount = random.choices(settings["OpenDungeons"][0], OpenDungeonsWeight)[0]
     if OpenDungeonAmount > 0:
         if "openDungeonsOot" not in SettingsList:
@@ -709,9 +712,6 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
     SettingsList["dekuTree"] = random.choices(settings["DekuTree"][0], settings["DekuTree"][1])[0]
 
     GanonTrialAmount = random.choices(settings["GanonTrialAmount"][0], settings["GanonTrialAmount"][1])[0]
-    if DungeonEntranceShuffle == True:
-        if SettingsList["erGanonTower"] == True:
-            GanonTrialAmount = random.choices(settings["GanonTrialAmount"][0], settings["GanonTrialAmount"][2])[0]
     if GanonTrialAmount > 0:
         MysteryCount += 1
         SettingsList["ganonTrials"] = {"type": "specific", "values": []}
@@ -1182,6 +1182,8 @@ with open("output/settings_spoiler.txt", "w") as spoiler_file:
     print("Crate and Barrel Shuffle:", SharedCratesAndBarrels.capitalize(), file=spoiler_file)
     print("Snowball Shuffle:", SettingsList["shuffleSnowballsMm"].capitalize(), file = spoiler_file)
     print("Red Boulder Shuffle:", RedBoulderShuffle, file=spoiler_file)
+    print("Icicle Shuffle:", IcicleShuffle, file=spoiler_file)
+    print("Red Ice Shuffle:", RedIceShuffle, file=spoiler_file)
     print("Cow Shuffle:", SharedCowShuffle, file=spoiler_file)
     print("Child Wallet Shuffle:", ChildWallet, file=spoiler_file)
     print("Shop Shuffle:", SharedShopShuffle.capitalize(), file=spoiler_file)
