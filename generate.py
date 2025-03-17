@@ -117,7 +117,7 @@ HintToInsertBefore = {"type":"woth",
                     "amount":10,
                     "extra":1}
 
-Logic = random.choices(data["LogicSettings"][0], data["LogicSettings"][1])[0]
+Logic = data["LogicSettings"][0]
 
 ItemPool = random.choices(data["ItemPool"][0], data["ItemPool"][1])[0]
 
@@ -139,6 +139,8 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
     entranceTypeShuffled = 0
 
     SettingsList = base_settings.copy()
+
+    SettingsList["dungeonRewardShuffle"] = data["RewardsSettings"][0]
 
     SettingsList["logic"] = Logic
     if Logic == "none":
@@ -1153,6 +1155,7 @@ with open("output/settings_spoiler.txt", "w") as spoiler_file:
     if WinCond == "Triforce Hunt":
         print("Triforce Pieces Needed:", SettingsList["triforceGoal"], file=spoiler_file)
         print("Triforce Pieces Overall:", SettingsList["triforcePieces"], file=spoiler_file)
+    print("Dungeon Rewards:", SettingsList["dungeonRewardShuffle"], file=spoiler_file)
     print("", file=spoiler_file)
     print("Memey Settings:", file=spoiler_file)
     print("Climb Most Surfaces:", ClimbSurfaces, file=spoiler_file)

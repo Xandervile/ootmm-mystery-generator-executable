@@ -445,6 +445,9 @@ class MainWeightSettings {
 
     'climbSurfacesOnWeight': 'climbSurfacesOnWeight',
     'climbSurfacesOffWeight': 'climbSurfacesOffWeight',
+
+    'dungeonRewardShuffle': 'dungeonRewardShuffle',
+    'logic': 'logic',
   };
 }
 
@@ -500,9 +503,10 @@ Future<void> generateJsonAndRunPython(Map<String, int> itemWeights, Map<String, 
 
     "Goal": [["Ganon and Majora", "Triforce Hunt", "Triforce Quest"], [int.tryParse(mainWeights["winGMWeight"] ?? "") ?? 70, int.tryParse(mainWeights["winPiecesWeight"] ?? "") ?? 10, int.tryParse(mainWeights["winQuestWeight"] ?? "") ?? 20]],
     "TriforcePieces": [[20, 25, 30, 35, 40], [int.tryParse(mainWeights["pieces20Weight"] ?? "") ?? 15, int.tryParse(mainWeights["pieces25Weight"] ?? "") ?? 20, int.tryParse(mainWeights["pieces30Weight"] ?? "") ?? 30, int.tryParse(mainWeights["pieces35Weight"] ?? "") ?? 20, int.tryParse(mainWeights["pieces40Weight"] ?? "") ?? 15]],
-    "LogicSettings":[["beatable", "none", "allLocations"], [0, 0, 100]],
+    "LogicSettings":[mainWeights['logic']],
     "ItemPool":[["plentiful", "normal", "scarce", "minimal", "barren"], [int.tryParse(mainWeights["itemPoolPlentiful"] ?? "") ?? 0, int.tryParse(mainWeights["itemPoolNormal"] ?? "") ?? 100, int.tryParse(mainWeights["itemPoolScarce"] ?? "") ?? 0, int.tryParse(mainWeights["itemPoolMinimal"] ?? "") ?? 0, int.tryParse(mainWeights["itemPoolBarren"] ?? "") ?? 0]],
-    
+    "RewardsSettings": [mainWeights["dungeonRewardShuffle"]],
+
     "Mode": [mainWeights['multiMode']],
     "Players": [int.tryParse(mainWeights["playerCount"] ?? "") ?? 2],
     "Teams": [int.tryParse(mainWeights["teamCount"] ?? "") ?? 1],

@@ -33,6 +33,8 @@ class MainSettingsPage extends StatelessWidget {
                     ),
                   ),
                   WinConSettings(),
+                  LogicSettings(),
+                  RewardsSettings(),
                   PiecesRequired(),
                   SettingsAmount(),
                   MMAdultSettings(),
@@ -594,5 +596,43 @@ class ClimbSurfacesSettingsState extends MainWeightSettingsState<ClimbSurfacesSe
   @override
   Widget build(BuildContext context) {
     return buildSettingsUI('Climb Most Surfaces', mainWeightKeys.keys.toList());
+  }
+}
+
+class RewardsSettings extends StatefulWidget {
+  const RewardsSettings({super.key});
+
+  @override
+  RewardsSettingsState createState() => RewardsSettingsState();
+}
+
+class RewardsSettingsState extends MainWeightSettingsState<RewardsSettings> {
+  RewardsSettingsState()
+      : super({
+        "Choose": MainWeightOption('dungeonRewardShuffle', 'Vanilla: On blue warps, dungeonsLimited: 1 max per dungeon, dungeons: In dungeons, anywhere: Anywhere', options: ['vanilla', 'dungeonsLimited', 'dungeons', 'anywhere'], defaultValue: 'vanilla'),
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Dungeon Reward Locations', mainWeightKeys.keys.toList());
+  }
+}
+
+class LogicSettings extends StatefulWidget {
+  const LogicSettings({super.key});
+
+  @override
+  LogicSettingsState createState() => LogicSettingsState();
+}
+
+class LogicSettingsState extends MainWeightSettingsState<LogicSettings> {
+  LogicSettingsState()
+      : super({
+        "Choose": MainWeightOption('logic', 'allLocations: Every location reachable, beatable: Not all locations are reachable, dungeons: In dungeons, none: May be unbeatable, requires glitches', options: ['allLocations', 'beatable', 'none'], defaultValue: 'allLocations'),
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return buildSettingsUI('Logic Options', mainWeightKeys.keys.toList());
   }
 }
