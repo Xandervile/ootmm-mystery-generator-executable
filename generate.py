@@ -119,6 +119,8 @@ HintToInsertBefore = {"type":"woth",
 
 Logic = data["LogicSettings"][0]
 
+RewardsSetting = data["RewardsSettings"][0]
+
 ItemPool = random.choices(data["ItemPool"][0], data["ItemPool"][1])[0]
 
 DefaultPlando = base_settings["plando"]["locations"]
@@ -140,13 +142,13 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
 
     SettingsList = base_settings.copy()
 
-    SettingsList["dungeonRewardShuffle"] = data["RewardsSettings"][0]
-
     SettingsList["logic"] = Logic
     if Logic == "none":
         HintToInsertBefore = {"type":"sometimes",
                             "amount":"max",
                             "extra":1}
+
+    SettingsList["dungeonRewardShuffle"] = RewardsSetting
 
     SettingsList["mode"] = data["Mode"][0]
     if SettingsList["mode"] == "multi" or SettingsList["mode"] == "coop":
@@ -381,7 +383,7 @@ while MysteryCount < MinMysterySettings or HardCounter > HARDMODELIMIT or Myster
                                             "extra": 1,
                                             "item": "MM_CLOCK6"})
         else:
-            StartingItemList["MM_CLOCK"] = StartingClockAmount
+            StartingItemList["MM_CLOCK"] = StartingClockAmount - 1
 
     BossSoulsWeight = settings["BossSoulsWeight"][1]
     if BKeyShuffle == "anywhere":
@@ -1155,7 +1157,6 @@ with open("output/settings_spoiler.txt", "w") as spoiler_file:
     if WinCond == "Triforce Hunt":
         print("Triforce Pieces Needed:", SettingsList["triforceGoal"], file=spoiler_file)
         print("Triforce Pieces Overall:", SettingsList["triforcePieces"], file=spoiler_file)
-    print("Dungeon Rewards:", SettingsList["dungeonRewardShuffle"], file=spoiler_file)
     print("", file=spoiler_file)
     print("Memey Settings:", file=spoiler_file)
     print("Climb Most Surfaces:", ClimbSurfaces, file=spoiler_file)
